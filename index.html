@@ -24,6 +24,7 @@
             color: #4f46e5;
         }
     </style>
+    <script src="nav-component.js" defer></script>
 </head>
 <body class="flex flex-col min-h-screen bg-gray-100">
     <header class="px-4 py-6 border-b bg-white">
@@ -41,7 +42,7 @@
             <h2 class="text-xl mb-4">Favourites</h2>
             <div class="bg-white rounded-lg overflow-hidden shadow">
                 <div class="relative">
-                    <img src="https://via.placeholder.com/400x200" alt="Person working out" class="w-full object-cover">
+                    <img src="https://via.placeholder.com/400x200" alt="Person working out" class="w-full object-cover h-48">
                 </div>
                 <div class="p-4">
                     <div class="flex items-start justify-between">
@@ -49,7 +50,7 @@
                             <p class="text-sm text-gray-500">Workout #1</p>
                             <h3 class="text-2xl font-bold mt-1">Chest</h3>
                             <div class="flex items-center gap-2 mt-2">
-                                <span class="inline-block w-5 h-5 rounded-full border-2 border-gray-800"></span>
+                                <span class="material-icons text-gray-600">schedule</span>
                                 <span>55 mins</span>
                             </div>
                         </div>
@@ -60,45 +61,18 @@
                 </div>
             </div>
         </section>
-    </main>
 
-    <nav class="border-t bg-white">
-        <div class="flex items-center justify-around p-4">
-            <a href="#" class="nav-item">
-                <span class="material-icons">home</span>
-                <span>Feed</span>
-            </a>
-            <a href="#" class="nav-item">
-                <span class="material-icons">analytics</span>
-                <span>Analytics</span>
-            </a>
-            <a href="#" class="nav-item active">
-                <span class="material-icons">add</span>
-                <span>Add</span>
-            </a>
-            <a href="#" class="nav-item">
-                <span class="material-icons">menu</span>
-                <span>Workouts</span>
-            </a>
-            <a href="#" class="nav-item">
-                <span class="material-icons">person</span>
-                <span>Profile</span>
-            </a>
-        </div>
-    </nav>
 
-    <script>
-        // You can add any necessary JavaScript here
-        // For example, to handle navigation or dynamic content loading
-        document.querySelectorAll('.nav-item').forEach(item => {
-            item.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelectorAll('.nav-item').forEach(navItem => {
-                    navItem.classList.remove('active');
-                });
-                this.classList.add('active');
+        <navigation-bar> </navigation-bar>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const nav = document.querySelector('navigation-bar');
+                nav.setActivePage('workouts'); // Set the active page for this HTML file
             });
-        });
-    </script>
+        </script>    
+
+
+    </main>
 </body>
 </html>
