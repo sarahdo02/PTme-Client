@@ -28,6 +28,8 @@
 </head>
 <body class="flex flex-col min-h-screen bg-gray-100">
     <header class="px-4 py-6 border-b bg-white">
+
+        
         <div class="flex items-center justify-between">
             <div class="flex items-center gap-4">
                 <img src="https://via.placeholder.com/40" alt="PT Logo" class="w-10 h-10">
@@ -35,6 +37,8 @@
             </div>
             <button class="text-purple-500">Push Workout</button>
         </div>
+
+
     </header>
 
     <main class="flex-1 px-4 py-6">
@@ -62,13 +66,13 @@
             </div>
         </section>
 
-
+        <!-- navigation bar component -->
         <navigation-bar> </navigation-bar>
 
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 const nav = document.querySelector('navigation-bar');
-                nav.setActivePage('workouts'); // Set the active page for this HTML file
+                nav.setActivePage('dashboard'); // Set the active page for this HTML file
             });
         </script>    
 
