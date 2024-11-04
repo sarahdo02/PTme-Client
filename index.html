@@ -1,1 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        .nav-item.active {
+            background-color: #e0e7ff;
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            color: #4f46e5;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen bg-gray-100">
+    <header class="px-4 py-6 border-b bg-white">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <img src="https://via.placeholder.com/40" alt="PT Logo" class="w-10 h-10">
+                <h1 class="text-xl font-bold">WORKOUTS</h1>
+            </div>
+            <button class="text-purple-500">Push Workout</button>
+        </div>
+    </header>
 
+    <main class="flex-1 px-4 py-6">
+        <section>
+            <h2 class="text-xl mb-4">Favourites</h2>
+            <div class="bg-white rounded-lg overflow-hidden shadow">
+                <div class="relative">
+                    <img src="https://via.placeholder.com/400x200" alt="Person working out" class="w-full object-cover">
+                </div>
+                <div class="p-4">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <p class="text-sm text-gray-500">Workout #1</p>
+                            <h3 class="text-2xl font-bold mt-1">Chest</h3>
+                            <div class="flex items-center gap-2 mt-2">
+                                <span class="inline-block w-5 h-5 rounded-full border-2 border-gray-800"></span>
+                                <span>55 mins</span>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 rounded-full border-2 border-gray-800 flex items-center justify-center">
+                            <span class="material-icons text-sm">check</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <nav class="border-t bg-white">
+        <div class="flex items-center justify-around p-4">
+            <a href="#" class="nav-item">
+                <span class="material-icons">home</span>
+                <span>Feed</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="material-icons">analytics</span>
+                <span>Analytics</span>
+            </a>
+            <a href="#" class="nav-item active">
+                <span class="material-icons">add</span>
+                <span>Add</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="material-icons">menu</span>
+                <span>Workouts</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="material-icons">person</span>
+                <span>Profile</span>
+            </a>
+        </div>
+    </nav>
+
+    <script>
+        // You can add any necessary JavaScript here
+        // For example, to handle navigation or dynamic content loading
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.nav-item').forEach(navItem => {
+                    navItem.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
